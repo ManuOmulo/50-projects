@@ -2,69 +2,53 @@ import React, { useState, useEffect } from "react"
 import { io } from "socket.io-client"
 import "./App.scss"
 
-import Template from "./Template"
+// import Template from "./Template"
 
 const socket = io("http://localhost:5000")
 
 const App = () => {
-  const [message, setMessage] = useState("")
-  const [location, setLocation] = useState("")
-  const [chats, setChats] = useState([])
+  const [message, setMessage] = useState([{createdAt: "", text: ""}])
+  // const [chatMessage, setChatMessage] = useState("")
 
   useEffect(() => {
-    socket.on("message", (message) => {
-      setMessage(message)
-      setChats(message)
-      console.log(message)
+    socket.on("message", (newMessage) => {
+      setMessage(newMessage)
     })
-  }, [])
-
-  useEffect(() => {
-    if (!navigator.geolocation) {
-      return alert("Geolocation is not supported by your Browser")
-    }
-
-    navigator.geolocation.getCurrentPosition(position => {
-      const { longitude, latitude} = position.coords
-      const location = {
-        longitude,
-        latitude
-      }
-      setLocation(location)
-    })
-  }, [])
-
-
-  const sendLocation = () => {
-    socket.emit("sendLocation", location, () => {
-      console.log("Location sent!!")
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const clientMessage = e.target.elements.message.value;
-    socket.emit("sendMessage", clientMessage, (error) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log("Message sent...");
-    });
-  }
+  })
 
   const handleChange = (e) => {
-    setMessage({...message, [e.target.name]: e.target.value})
+    setMessage([...message, {[e.target.name]: e.target.value}])
+  }
+
+  const handleSubmitMessage = (e) => {
+    e.preventDefault()
+    const clientMessage = e.target.value
+    socket.emit("sendMessage", clientMessage, (error) => {
+      if (error) {
+        return console.log(error)
+      }
+      setMessage(clientMessage)
+      console.log(clientMessage)
+    })
   }
 
   return (
     <>
-      <Template
-        message={message}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        sendLocation={sendLocation}
-      />
-      <div>{chats}</div>
+      <form onSubmit={handleSubmitMessage}>
+          <input
+            name="name"
+            value={message.text}
+            onChange={handleChange}
+          />
+          <button>Submit</button>
+      </form>
+
+
+      {/* {message.map((message, index) => (
+        <div key={index}>
+          <p>{message.createdAt} - {message.text}</p>
+        </div>
+      ))} */}
     </>
   )
 }
