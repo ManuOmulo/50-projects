@@ -6,26 +6,6 @@
           box-sizing: border-box;
 }
 
-:root {
-  --primary-color: #000;
-  --secondary-color: #fff;
-}
-
-html {
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
-}
-
-html.dark {
-  --primary-color: #fff;
-  --secondary-color: #000;
-}
-
-html.dark {
-  background-color: #111;
-  color: var(--primary-color);
-}
-
 body {
   font-family: "Heebo", sans-serif;
   display: -webkit-box;
@@ -79,7 +59,7 @@ body {
 }
 
 .needle {
-  background-color: var(--primary-color);
+  background-color: #000;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -87,7 +67,6 @@ body {
   width: 3px;
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
-  transition: all 0.5s ease-in;
 }
 
 .needle.hour {
@@ -142,7 +121,6 @@ body {
   font-size: 14px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  margin-top: 10px;
 }
 
 .date .circle {
