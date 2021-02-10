@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf0f1;
+  font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 350px;
+}
+
+.card-header {
+  height: 200px;
+}
+
+.card-header img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: #fff;
+  padding: 30px;
+}
+
+.card-title {
+  height: 20px;
+}
+
+.card-excerpt {
+  color: #777;
+  margin: 10px 0 20px;
+}
+
+.author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile-img {
+  border-radius: 50%;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+}
+
+.author-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.author-info small {
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.animated-bg {
+  background-image: -webkit-gradient(linear, left top, right top, from(#f6f7f8), color-stop(10%, #edeef1), color-stop(20%, #f6f7f8), to(#f6f7f8));
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 10%, #f6f7f8 20%, #f6f7f8 100%);
+  background-size: 200% 100%;
+  -webkit-animation: bgPos 1s linear infinite;
+          animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0;
+  height: 10px;
+  width: 100%;
+}
+
+@-webkit-keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+  100% {
+    background-position: -150% 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
