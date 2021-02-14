@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2a2a72;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.user-form {
+  width: 100%;
+  max-width: 700px;
+
+  input {
+    width: 100%;
+    display: block;
+    background-color: #4c2885;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-family: inherit;
+    font-size: 1rem;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(0,0,0,0.1);
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #bbb;
+    }
+  }
+}
+
+.card {
+  max-width: 800px;
+  background-color: #4c2885;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(0,0,0,0.1);
+  display: flex;
+  padding: 3rem;
+  margin: 0 1.5rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 10px solid #2a2a72;
+  height: 150px;
+  width: 150px;
+}
+
+.user-info {
+  color: #eee;
+  margin-left: 2rem;
+
+  p {
+    margin-top: 1rem;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    max-width: 400px;
+    margin-top: 1rem;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      strong {
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.repos {
+  text-decoration: none;
+  color: white;
+  background-color: #2a2a72;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 555px) {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+  }
+
+  .avatar {
+    margin-left: 10px;
+  }
+
+  .user-form {
+    margin-top: 50px;
+    max-width: 400px;
+  }
+
+  .user-info {
+    p {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    ul {
+      margin-bottom: 20px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .repos {
+    display: flex;
+    margin: 10px auto;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+}
