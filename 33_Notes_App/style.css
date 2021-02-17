@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #7bdaf3;
+  font-family: "Poppins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 3rem;
+}
+
+.add {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #9ec862;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.note {
+  background-color: white;
+  -webkit-box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  margin: 30px 20px;
+  height: 400px;
+  width: 400px;
+}
+
+.note .tools {
+  background-color: #9ec862;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.note .tools button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.note textarea {
+  outline: none;
+  font-family: inherit;
+  font-size: 1.2rem;
+  border: none;
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+}
+
+.main {
+  padding: 30px;
+}
+
+.hidden {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
