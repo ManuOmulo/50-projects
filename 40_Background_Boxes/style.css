@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "Roboto", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.magic {
+  background-color: #f9ca24;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+          box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+  z-index: 100;
+}
+
+.magic:focus {
+  outline: none;
+}
+
+.magic:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.boxes {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 500px;
+  width: 500px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.boxes.big {
+  width: 600px;
+  height: 600px;
+}
+
+.boxes.big .box {
+  -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+}
+
+.box {
+  position: relative;
+  background-image: url("https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+  height: 125px;
+  width: 125px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.box::after {
+  content: "";
+  background-color: #f6e58d;
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  -webkit-transform: skewY(45deg);
+          transform: skewY(45deg);
+}
+
+.box::before {
+  content: "";
+  background-color: #f9ca24;
+  position: absolute;
+  bottom: -15px;
+  left: 8px;
+  height: 15px;
+  width: 100%;
+  -webkit-transform: skewX(45deg);
+          transform: skewX(45deg);
+}
+/*# sourceMappingURL=style.css.map */
