@@ -94,7 +94,7 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-.user-list.hide {
+.user-list .hide {
   display: none;
 }
 /*# sourceMappingURL=style.css.map */
